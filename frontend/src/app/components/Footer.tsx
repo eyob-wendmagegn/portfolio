@@ -21,7 +21,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
     setStatus({ submitting: true, success: false, error: false, message: "" });
 
     try {
-      const response = await fetch('https://portfolio-app-rtx5.onrender.com/api/subscribe', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -345,7 +345,7 @@ export default function Home() {
               setStatus({ submitting: true, success: false, error: false, message: "" });
 
               try {
-                const response = await fetch('https://portfolio-app-rtx5.onrender.com/api/contact', {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
