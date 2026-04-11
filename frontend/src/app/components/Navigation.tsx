@@ -50,7 +50,7 @@ export default function Navigation({ scrollToSection }: NavigationProps){
           {/* Download CV Button - Desktop */}
           <div className="hidden md:block">
             <a 
-              href="/CV1.pdf" 
+              href="/Eyob-CV.pdf" 
               download
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center gap-2"
             >
