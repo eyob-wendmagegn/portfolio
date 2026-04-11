@@ -21,7 +21,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
     setStatus({ submitting: true, success: false, error: false, message: "" });
 
     try {
-      const response = await fetch('http://localhost:5000/api/subscribe', {
+      const response = await fetch('https://portfolio-app-rtx5.onrender.com/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,6 @@ export default function Footer({ scrollToSection }: FooterProps) {
         });
         setEmail("");
         
-        // Clear success message after 5 seconds
         setTimeout(() => {
           setStatus(prev => ({ ...prev, success: false, message: "" }));
         }, 5000);
@@ -77,21 +76,20 @@ export default function Footer({ scrollToSection }: FooterProps) {
             </p>
             <div className="flex gap-3 mt-4">
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/eyob-wendmagegn" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-[#1a2f4a] flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-[#234] transition-all duration-300"
               >
                 <i className="fab fa-github text-sm"></i>
               </a>
-             
               <a 
-                href="https://t.me/yourusername" 
+                href="https://linkedin.com/in/eyob-w" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-[#1a2f4a] flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-[#234] transition-all duration-300"
               >
-                <i className="fab fa-telegram-plane text-sm"></i>
+                <i className="fab fa-linkedin-in text-sm"></i>
               </a>
             </div>
           </div>
@@ -112,7 +110,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
             <h4 className="text-white font-semibold text-sm mb-3">Resources</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">Style Guide</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">GitHub Repo</a></li>
+              <li><a href="https://github.com/eyob-wendmagegn/portfolio" target="_blank" className="text-gray-400 hover:text-blue-400 text-sm transition">GitHub Repo</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">Documentation</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">Components</a></li>
             </ul>
@@ -146,7 +144,6 @@ export default function Footer({ scrollToSection }: FooterProps) {
               Subscribe to my newsletter for updates and tips
             </p>
             
-            {/* Status Message */}
             {status.message && (
               <div className={`text-sm ${status.success ? 'text-green-400' : 'text-red-400'} md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}>
                 {status.message}
@@ -181,8 +178,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-blue-900/30 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs">
           <span>
-            © {new Date().getFullYear()} Eyob.dev — built with 
-            using Next.js & Tailwind CSS
+            © {new Date().getFullYear()} Eyob.dev — built with Next.js & Tailwind CSS
           </span>
           <div className="flex gap-6 mt-3 md:mt-0">
             <a 

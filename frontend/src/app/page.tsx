@@ -314,11 +314,11 @@ export default function Home() {
       {/* Contact Section */}
       {/* Contact Section */}
 {/* Contact Section */}
+           {/* Contact Section */}
       <section id="contact" className="bg-[#0a192f] py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">collaboration</span>
           
-          {/* Add state for form data and status */}
           {(() => {
             const [formData, setFormData] = React.useState({
               name: "",
@@ -332,12 +332,11 @@ export default function Home() {
               message: ""
             });
 
-            // FIXED: The handleChange function had a bug
             const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
               const { name, value } = e.target;
               setFormData(prev => ({
                 ...prev,
-                [name]: value  // This was incorrectly set to [e.target.name]: e.target.name
+                [name]: value
               }));
             };
 
@@ -346,7 +345,7 @@ export default function Home() {
               setStatus({ submitting: true, success: false, error: false, message: "" });
 
               try {
-                const response = await fetch('http://localhost:5000/api/contact', {
+                const response = await fetch('https://portfolio-app-rtx5.onrender.com/api/contact', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
